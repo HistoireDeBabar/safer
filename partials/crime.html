@@ -1,0 +1,12 @@
+<h1>{{crime.message}}</h1>
+<input ng-model="crime.address" type="text">
+
+<select ng-model="crime.searchType">
+<option value="crime">Crime</option>
+<option value="search">Stop and Search</option>
+</select>
+
+<select ng-model="crime.date" ng-options="date.date as date.date for date in crime.availability"></select>
+<button ng-click="crime.getAddress();">Search</button>
+
+{{this.loc}}
