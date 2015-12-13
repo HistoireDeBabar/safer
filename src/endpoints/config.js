@@ -18,6 +18,9 @@ var config = {
 		root: 'https://maps.googleapis.com/maps/api/geocode/json?address=',
 		key: '&key=AIzaSyDZYwxoWzyQbw1fDVmSexxDoyYStcM4SWs'
 	},
+	maps: {
+		key: 'AIzaSyCUbE6imd2h7SqQGeiVZbvmSJh-TaSSlCc'
+	},
 	police: {
 		crimes_at_location: function(d){
 			return 'https://data.police.uk/api/crimes-street/all-crime?'+'lat='+d.lat+'&lng='+d.lng+'&date='+d.date;

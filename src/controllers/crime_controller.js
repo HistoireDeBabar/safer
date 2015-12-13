@@ -14,6 +14,7 @@ CrimeController.prototype.getAddress = function() {
 			console.log('error', err);
 		} else {
 			that.search = res;
+			console.log(res);
 			that.getCrime();
 		}
 	});
@@ -38,10 +39,31 @@ CrimeController.prototype.getCrime = function() {
 		if (err) {
 
 		} else {
-			that.crimeResults = res;
-			console.log(res);
+			that.search.crimes = res;
+			that.incidents = that.search;
+			that.createReport();
 		}
 	});
+}
+
+CrimeController.prototype.incidentReport = function(incedent) {
+	console.log(incedent);
+}
+
+CrimeController.prototype.createReport = function() {
+	this.report = {};
+	this.report.totalIncidents = this.incidents.crimes.length;
+	if(this.incidents.type == 'crime') {
+		this.report.searchType = 'crimes in'
+	}
+
+	if(this.incidents.type == 'search') {
+		this.report.searchType = 'stop and searches in'
+	}
+	this.report.date = 'during ' + this.incidents.date;
+	this.report.loc = this.search.address;
+	console.log(this.report);
+	console.log(this.search);
 }
 
 module.exports = CrimeController;

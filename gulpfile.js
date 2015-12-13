@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 gulp.task('sass', function() {
 	return gulp.src('./scss/**/*')
 	.pipe(sass.sync().on('error', sass.logError))
-	.pipe(sass())
+	.pipe(sass({includePaths: ['./scss']}))
 	.pipe(gulp.dest('./dist/css'));
 	});
 
