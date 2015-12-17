@@ -14,7 +14,6 @@ CrimeController.prototype.getAddress = function() {
 			console.log('error', err);
 		} else {
 			that.search = res;
-			console.log(res);
 			that.getCrime();
 		}
 	});

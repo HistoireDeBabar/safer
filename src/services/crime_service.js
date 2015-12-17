@@ -23,7 +23,6 @@ function CrimeService($resource) {
 	var getDates = function(callback) {
 		var that = this;
 		var onLoad = function(res) {
-			// console.log(res);
 			return callback(undefined, res);
 		}
 
@@ -43,7 +42,6 @@ function CrimeService($resource) {
 		}
 
 		var onError = function(err) {
-			// console.log(err);
 			return callback(err);
 		}
 		var url;

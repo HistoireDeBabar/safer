@@ -14,7 +14,7 @@ module.exports = function() {
 					}
 					map = new google.maps.Map(el[0], {
 					center: {lat: d.lat, lng: d.lng},
-					zoom: 16,
+					zoom: 14,
 					disableDefaultUI: true
 					});
 
