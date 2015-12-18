@@ -1,0 +1,12 @@
+.incident-report-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 400px;
+	height: 100vh;
+	z-index: 99999;
+	background: #333333;
+	p {
+		color: white;
+	}
+}

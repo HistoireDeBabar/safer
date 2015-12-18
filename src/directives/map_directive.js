@@ -3,7 +3,8 @@ module.exports = function() {
 	return {
 		restrict: 'E',
 		scope: {
-			incidents: '='
+			incidents: '=',
+			report: '&'
 		},
 		controller: 'CrimeController',
 		link: function(scope, el, attr, controller) {
@@ -20,7 +21,16 @@ module.exports = function() {
 
 					for (n in d.crimes) {
 						if(d.crimes[n].location) {
-								new crimeMarker(d.crimes[n], map, controller);
+								new crimeMarker(d.crimes[n], map, function(incd) {
+									// console.log(scope);
+									// console.log(controller);
+									// console.log(incd);
+									console.log(incd);
+									// var report = JSON.stringify(incd);
+									scope.report({incd: incd});
+									scope.$apply();
+									// scope.$apply();
+								});
 							}
 						}
 				});

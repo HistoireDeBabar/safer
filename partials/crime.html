@@ -1,4 +1,5 @@
 <section class="toolbar">
+<button ng-click="crime.logCtrl()">log</button>
 <form ng-submit="crime.getAddress();">
 <label>
 <p>Location</p>
@@ -19,4 +20,5 @@
 </form>
 <h4>{{crime.report.totalIncidents}} {{crime.report.searchType}} {{crime.report.loc}} {{crime.report.date}}</h4>
 </section>
-<map incidents="crime.incidents"></map>
+<incident report="crime.incident"></incident>
+<map incidents="crime.incidents" report="crime.incidentReport({incd: incd});"></map>
