@@ -1,6 +1,10 @@
 <div class="incident-report-container">
-	<p ng-click="report.testFunc()">{{report.category}}</p>
-	<p>{{report.location.street.name}}</p>
+	<div class="incident-report-header" style="background: url('{{report.street_view}}');">
+	<section>
+	<p>{{report.category}}</p>
+	<p>{{report.street_name}}</p>
+	</section>
+	</div>
 </div>
 
 

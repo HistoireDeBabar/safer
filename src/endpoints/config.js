@@ -18,6 +18,11 @@ var config = {
 		root: 'https://maps.googleapis.com/maps/api/geocode/json?address=',
 		key: '&key=AIzaSyDZYwxoWzyQbw1fDVmSexxDoyYStcM4SWs'
 	},
+	street: {
+		view: function(d) {
+			return 'https://maps.googleapis.com/maps/api/streetview?size=600x300&location=' + d.latitude +',' + d.longitude + '&key=AIzaSyDImn_Y2_fQAoo-gb7M-l344w7tEHmdX0Q'
+		}
+	},
 	maps: {
 		key: 'AIzaSyCUbE6imd2h7SqQGeiVZbvmSJh-TaSSlCc'
 	},

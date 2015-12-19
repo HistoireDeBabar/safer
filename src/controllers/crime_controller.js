@@ -53,8 +53,14 @@ CrimeController.prototype.getCrime = function() {
 }
 
 CrimeController.prototype.incidentReport = function(incident) {
-	console.log(incident.incd);
-	this.incident = incident.incd;
+	var that = this;
+	this.CrimeService.streetView(incident.incd, function(res) {
+		if(res) {
+			console.log('controller', res);
+			incident.incd.street_view = res;
+			that.incident = incident.incd;
+		}
+	});
 }
 
 CrimeController.prototype.createReport = function() {

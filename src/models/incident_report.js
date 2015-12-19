@@ -13,9 +13,5 @@ function IncidentReport(options) {
 	this.persistent_id = options.persistent_id;
 }
 
-IncidentReport.prototype.testFunc = function() {
-	console.log(this.cateogry);
-}
-
 module.exports = IncidentReport;
 

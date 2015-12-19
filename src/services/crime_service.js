@@ -56,10 +56,17 @@ function CrimeService($resource) {
 	  	crimeCall.get(onLoad, onError);
 	}
 
+	var streetView = function(d, callback) {
+		var url = config.street.view(d);
+		callback(url);
+		
+	}	
+
 	return {
 		getAddress : getAddress,
 		getDates : getDates,
-		getCrime : getCrime
+		getCrime : getCrime,
+		streetView : streetView
 	};
 }
 
