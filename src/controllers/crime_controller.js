@@ -2,16 +2,7 @@ function CrimeController($scope, CrimeService) {
 	$scope = $scope || {};
 	$scope.crime = this;
 	this.CrimeService = CrimeService;
-	this.message = 'Safr!';
 	this.getDates();
-	this.incident = {
-		category : 'robbing'
-	};
-}
-
-CrimeController.prototype.logCtrl = function() {
-	console.log('log', this.incident);
-	console.log('log', this);
 }
 
 CrimeController.prototype.getAddress = function() {
@@ -56,7 +47,6 @@ CrimeController.prototype.incidentReport = function(incident) {
 	var that = this;
 	this.CrimeService.streetView(incident.incd, function(res) {
 		if(res) {
-			console.log('controller', res);
 			incident.incd.street_view = res;
 			that.incident = incident.incd;
 		}
@@ -75,8 +65,6 @@ CrimeController.prototype.createReport = function() {
 	}
 	this.report.date = 'during ' + this.incidents.date;
 	this.report.loc = this.search.address;
-	console.log(this.report);
-	console.log(this.search);
 }
 
 module.exports = CrimeController;

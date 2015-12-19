@@ -1,5 +1,6 @@
 function IncidentReport(options) {
 	that = this;
+	this.category_name = options.category_name;
 	this.category = options.category;
 	this.context = options.context;
 	this.crime_id = options.id;

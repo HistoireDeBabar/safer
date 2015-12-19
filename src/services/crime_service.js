@@ -34,11 +34,38 @@ function CrimeService($resource) {
 		var datesQuery = new $resource(url, undefined, {get: config.methods.getArray})
 		datesQuery.get(onLoad, onError);
 	}
+	//need to get date
+	var formatCrime = function(crimes, date, c) {
+		var that = this;
+
+		var onLoad = function(res) {
+			for(var i = 0; i < crimes.length; i++) {
+				for(var x = 0; x < res.length; x++) {
+					if(crimes[i].category == res[x].url) {
+						crimes[i].category_name = res[x].name;
+						}
+					}
+				}
+			return c(undefined, crimes);
+		}
+
+		var onError = function() {
+			return c(err);
+		}
+
+		var url = config.police.format_crime_name(date);
+		var getCrimeNames = $resource(url, undefined, {get: config.methods.getArray});
+		getCrimeNames.get(onLoad, onError);
+	}
 
 	var getCrime = function(d, callback) {
 		var that = this;
 		var onLoad = function(res) {
-			return callback(undefined, res);
+			formatCrime(res, d.date, function(err, crimes_upd) {
+				if(!err) {
+				return callback(undefined, crimes_upd);
+				}
+			});
 		}
 
 		var onError = function(err) {
@@ -51,7 +78,6 @@ function CrimeService($resource) {
 	 	else if (d.type == 'search') {
 	 		url = config.police.stop_and_search(d);
 	 	}
-	  	console.log(url);
 	  	var crimeCall = new $resource(url, undefined, {get: config.methods.getArray})
 	  	crimeCall.get(onLoad, onError);
 	}
@@ -66,7 +92,8 @@ function CrimeService($resource) {
 		getAddress : getAddress,
 		getDates : getDates,
 		getCrime : getCrime,
-		streetView : streetView
+		streetView : streetView,
+		formatCrime: formatCrime
 	};
 }
 

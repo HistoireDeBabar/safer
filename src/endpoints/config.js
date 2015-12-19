@@ -33,6 +33,9 @@ var config = {
 		stop_and_search: function(d) {
 			return 'https://data.police.uk/api/stops-street?lat=' + d.lat + '&lng='+d.lng+'&date='+d.date;
 		},
+		format_crime_name: function(d) {
+			return 'https://data.police.uk/api/crime-categories?' + d;
+		},
 		most_recent: 'https://data.police.uk/api/crime-last-updated',
 		availability: 'http://data.police.uk/api/crimes-street-dates'
 	}
