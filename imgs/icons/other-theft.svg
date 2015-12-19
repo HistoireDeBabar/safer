@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="89px" height="79px" viewBox="0 0 89 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.3 (16618) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="crime_icon" sketch:type="MSLayerGroup" fill="#000000">
+            <g id="Group" sketch:type="MSShapeGroup">
+                <path d="M30.685,21.109 L43.933,15.862 L58.488,19.269 L72.138,28.466 L71.3,32.455 L58.583,25.608 L50.659,24.827 L58.663,40.403 L61.589,59.046 L78.412,57.873 L79.196,63.35 L56.112,66.872 L49.928,50.995 L34.592,61.003 L27.94,78.61 L22.463,75.872 L28.173,55.498 L43.396,40.999 L34.324,29.717 L25.718,38.91 L12.121,30.792 L12.121,27.272 L24.286,30.487 L27.824,24.538 L30.685,21.109 Z" id="Shape"></path>
+                <circle id="Oval" cx="30.395" cy="8.804" r="7.931"></circle>
+                <path d="M67.518,33.199 L64.472,35.647 L69.457,38.431 L69.866,34.474 L67.518,33.199 Z" id="Shape"></path>
+                <path d="M70.418,24.186 C70.418,24.186 69.947,17.514 76.178,15.806 C81.278,14.408 88.238,17.707 88.758,22.951 C89.28,28.194 85.353,31.282 83.301,31.967 C77.472,33.912 78.529,22.262 72.48,25.598 L70.418,24.186 L70.418,24.186 Z" id="Shape"></path>
+                <path d="M7.258,43.214 L6.837,19.159 C6.808,19.12 6.787,19.115 6.778,19.113 C6.18,18.947 4.522,19.809 3.435,20.684 L0.333,19.85 L1.706,18.546 C2.271,18.088 5.208,15.836 7.499,16.459 C8.42,16.709 9.129,17.383 9.494,18.357 L9.577,18.579 L9.581,18.816 L10.007,43.165 L7.258,43.214 L7.258,43.214 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
