@@ -6,6 +6,8 @@ var CrimeService = require('./services/crime_service.js');
 
 //Directives
 var map = require('./directives/map_directive.js');
+var incident = require('./directives/incident_directive.js')
+
 //Angular
 var angular = require('angular');
 
@@ -21,6 +23,7 @@ app.config(['$routeProvider', function($routeProvider) {
 
 //Directive
 app.directive('map', [map]);
+app.directive('incident', [incident]);
 
 //Services
 app.factory('CrimeService', ['$resource', CrimeService]);

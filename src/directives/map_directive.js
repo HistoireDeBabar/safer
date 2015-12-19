@@ -1,9 +1,11 @@
 var crimeMarker = require('../models/crime_marker.js');
+var IncidentReport = require('../models/incident_report.js');
 module.exports = function() {
 	return {
 		restrict: 'E',
 		scope: {
-			incidents: '='
+			incidents: '=',
+			report: '&'
 		},
 		controller: 'CrimeController',
 		link: function(scope, el, attr, controller) {
@@ -20,7 +22,10 @@ module.exports = function() {
 
 					for (n in d.crimes) {
 						if(d.crimes[n].location) {
-								new crimeMarker(d.crimes[n], map, controller);
+								new crimeMarker(d.crimes[n], map, function(incd) { 
+									scope.report({incd: new IncidentReport(incd)});
+									scope.$apply();
+								});
 							}
 						}
 				});

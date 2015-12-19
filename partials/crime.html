@@ -19,4 +19,7 @@
 </form>
 <h4>{{crime.report.totalIncidents}} {{crime.report.searchType}} {{crime.report.loc}} {{crime.report.date}}</h4>
 </section>
-<map incidents="crime.incidents"></map>
+<div class="view-container">
+<incident report="crime.incident"></incident>
+<map incidents="crime.incidents" report="crime.incidentReport({incd: incd});"></map>
+</div>

@@ -1,4 +1,4 @@
-function crimeMarker(options, Map, controller) {
+function crimeMarker(options, Map, callback) {
 var that = this;
 this.mlat = Number(options.location.latitude);
 this.mlng = Number(options.location.longitude);
@@ -9,7 +9,8 @@ this.marker = new google.maps.Marker({
 			title: 'crime!'
 			});
 this.marker.addListener('click', function() {
-	controller.incidentReport(options)});	
+	callback(options);
+});	
 }
 
 module.exports = crimeMarker;

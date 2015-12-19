@@ -4,8 +4,15 @@ function CrimeController($scope, CrimeService) {
 	this.CrimeService = CrimeService;
 	this.message = 'Safr!';
 	this.getDates();
+	this.incident = {
+		category : 'robbing'
+	};
 }
 
+CrimeController.prototype.logCtrl = function() {
+	console.log('log', this.incident);
+	console.log('log', this);
+}
 
 CrimeController.prototype.getAddress = function() {
 	var that = this;
@@ -45,8 +52,9 @@ CrimeController.prototype.getCrime = function() {
 	});
 }
 
-CrimeController.prototype.incidentReport = function(incedent) {
-	console.log(incedent);
+CrimeController.prototype.incidentReport = function(incident) {
+	console.log(incident.incd);
+	this.incident = incident.incd;
 }
 
 CrimeController.prototype.createReport = function() {
