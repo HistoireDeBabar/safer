@@ -9,20 +9,6 @@ this.marker = new google.maps.Marker({
 			title: 'crime!'
 			});
 this.marker.addListener('click', function() {
-	// scope.incidentReport(options);
-	// controller.incidentReport(options);
-	// scope.crime.incidentReport(options);
-	// controller.incident = options;
-	// scope.crime.incident = options;
-	// scope.$apply(controller.incident);
-	// scope.$apply(scope.crime.incident);
-	// console.log(scope);
-	// console.log(controller);
-	// $scope.incidentReport(options);
-	// scope.$apply()
-	// console.log(controller.$scope);
-	// controller.prototype.incidentReport(options);
-	// that.incidentReport = options;
 	callback(options);
 });	
 }
