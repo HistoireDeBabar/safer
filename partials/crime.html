@@ -17,9 +17,35 @@
 </label>
 <input type="submit" value="Search">
 </form>
-<h4>{{crime.report.totalIncidents}} {{crime.report.searchType}} {{crime.report.loc}} {{crime.report.date}}</h4>
 </section>
+
 <div class="view-container">
-<incident report="crime.incident"></incident>
+<div class="welcome" ng-show="crime.virgin">
+	<h1>Welcome to Safer</h1>
+</div>
+<div class="preloader" ng-show="crime.loading">
+	<div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+	</div>
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<defs>
+			<filter id="goo">
+				<feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="7" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+				<feBlend in2="goo" in="SourceGraphic" result="mix" />
+			</filter>
+		</defs>
+	</svg>
+</div>
+<incident incident="crime.incident" report="crime.report"></incident>
 <map incidents="crime.incidents" report="crime.incidentReport({incd: incd});"></map>
 </div>

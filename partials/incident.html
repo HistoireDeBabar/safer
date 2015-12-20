@@ -1,8 +1,11 @@
 <div class="incident-report-container">
-	<div class="incident-report-header" style="background: url('{{report.street_view}}');">
+	<div class="report-header">
+	<p>{{report.totalIncidents}} {{report.searchType}} {{report.loc}} {{report.date}}</p>
+	</div>
+	<div ng-show="incident" class="incident-header" style="background: url('{{incident.street_view}}');">
 	<section>
-	<p>{{report.category_name}}</p>
-	<p>{{report.street_name}}</p>
+	<p>{{incident.category_name}}</p>
+	<p>{{incident.street_name}}</p>
 	</section>
 	</div>
 </div>

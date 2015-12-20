@@ -1,5 +1,6 @@
 var crimeMarker = require('../models/crime_marker.js');
 var IncidentReport = require('../models/incident_report.js');
+var styles = require('../utils/map_styles.js');
 module.exports = function() {
 	return {
 		restrict: 'E',
@@ -19,7 +20,7 @@ module.exports = function() {
 					zoom: 16,
 					disableDefaultUI: true
 					});
-
+					map.setOptions({styles: styles});
 					for (n in d.crimes) {
 						if(d.crimes[n].location) {
 								new crimeMarker(d.crimes[n], map, function(incd) { 

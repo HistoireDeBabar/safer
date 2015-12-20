@@ -1,12 +1,15 @@
 function CrimeController($scope, CrimeService) {
 	$scope = $scope || {};
 	$scope.crime = this;
+	this.virgin = true;
 	this.CrimeService = CrimeService;
 	this.getDates();
 }
 
 CrimeController.prototype.getAddress = function() {
 	var that = this;
+	this.loading = true;
+	this.virgin = false;
 	this.CrimeService.getAddress(this.address, function(err, res) {
 		if(err) {
 			console.log('error', err);
@@ -65,6 +68,7 @@ CrimeController.prototype.createReport = function() {
 	}
 	this.report.date = 'during ' + this.incidents.date;
 	this.report.loc = this.search.address;
+	this.loading = false;
 }
 
 module.exports = CrimeController;
