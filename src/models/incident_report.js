@@ -9,7 +9,7 @@ function IncidentReport(options) {
 	this.street_name = options.location.street.name;
 	this.street_id = options.location.street.id;
 	this.location_type = options.location_type;
-	this.month = options.month
+	this.month = options.month;
 	this.outcome_status = options.outcome_status; 
 	this.persistent_id = options.persistent_id;
 }

@@ -82,10 +82,30 @@ function CrimeService($resource) {
 	  	crimeCall.get(onLoad, onError);
 	}
 
+	var getOutcome = function(id) {
+		var that = this;
+		if(!id) {
+			console.log('no id');
+			return;
+		}
+
+		var onLoad = function(res) {
+			console.log(res);
+		}
+
+		var onError = function(err) {
+			console.log(err);
+		}
+
+		var url = config.police.crime_outcome(id);
+		var outcome = new $resource(url, undefined, {get: config.methods.get});
+		outcome.get(onLoad, onError);
+	}
+
 	var streetView = function(d, callback) {
 		var url = config.street.view(d);
 		callback(url);
-		
+
 	}	
 
 	return {
@@ -93,7 +113,8 @@ function CrimeService($resource) {
 		getDates : getDates,
 		getCrime : getCrime,
 		streetView : streetView,
-		formatCrime: formatCrime
+		formatCrime : formatCrime,
+		getOutcome : getOutcome
 	};
 }
 

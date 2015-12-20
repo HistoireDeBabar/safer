@@ -36,6 +36,9 @@ var config = {
 		format_crime_name: function(d) {
 			return 'https://data.police.uk/api/crime-categories?' + d;
 		},
+		crime_outcome: function(id) {
+			return 'https://data.police.uk/api/outcomes-for-crime/' + id;
+		},
 		most_recent: 'https://data.police.uk/api/crime-last-updated',
 		availability: 'http://data.police.uk/api/crimes-street-dates'
 	}

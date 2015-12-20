@@ -16,7 +16,8 @@ map {
 }
 
 .welcome {
-	background: #333;
+	z-index: 9001;
+	background: $black;
 	width: 100vw;
 	height: 100vh;
 	position: absolute;

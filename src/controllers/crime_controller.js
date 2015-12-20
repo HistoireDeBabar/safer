@@ -54,6 +54,8 @@ CrimeController.prototype.incidentReport = function(incident) {
 			that.incident = incident.incd;
 		}
 	});
+	// console.log(incident);
+	this.CrimeService.getOutcome(incident.incd.persistent_id);
 }
 
 CrimeController.prototype.createReport = function() {
