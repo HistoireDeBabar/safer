@@ -11,7 +11,7 @@ var incident = require('./directives/incident_directive.js')
 //Angular
 var angular = require('angular');
 
-var app = angular.module('safer', [require('angular-route'), require('angular-resource')])
+var app = angular.module('safer', [require('angular-route'), require('angular-animate'), require('angular-resource')])
 
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider

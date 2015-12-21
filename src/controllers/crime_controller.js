@@ -39,6 +39,7 @@ CrimeController.prototype.getCrime = function() {
 		if (err) {
 
 		} else {
+			console.log(res);
 			that.search.crimes = res;
 			that.incidents = that.search;
 			that.createReport();

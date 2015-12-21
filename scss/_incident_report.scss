@@ -14,19 +14,29 @@
 		color: $white;
 		}
 	}
-	.incident-header {
-		height: 245px;
-		display: flex;
-		align-items: flex-end;
-		section {
-			width: 100%;
-			padding: 20px;
-			background: rgba(0,0,0,0.4);
-			p {
-			color: white;
-			margin-bottom: 10px;
-			}
-		}
+}
+
+
+.incident-header {
+	display: flex;
+	align-items: flex-end;
+	overflow: hidden;
+	height: 245px;
+	&.ng-hide-remove {
+	transition-delay: 0.2s;
+	transition: all 0.2s ease;
+	}
+	&.ng-hide {
+		height: 0;
 	}
 
+	section {
+		width: 100%;
+		padding: 20px;
+		background: rgba(0,0,0,0.4);
+		p {
+		color: white;
+		margin-bottom: 10px;
+		}
+	}
 }

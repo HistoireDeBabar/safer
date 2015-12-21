@@ -15,6 +15,16 @@ $animation-time: 1.25s;
 	top: 0;
 	left: 0;
 	z-index: 9002;
+	opacity: 1;
+	&.ng-hide-add, &.ng-hide-remove {
+		transition: all 0.2s ease;
+	}
+	&.ng-hide-remove {
+		transition-delay: 0.2s;
+	}
+	&.ng-hide {
+		opacity: 0;
+	}
 }
 
 .dots {

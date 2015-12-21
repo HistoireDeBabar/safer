@@ -16,7 +16,7 @@ map {
 }
 
 .welcome {
-	z-index: 9001;
+	z-index: 9004;
 	background: $black;
 	width: 100vw;
 	height: 100vh;
@@ -26,8 +26,14 @@ map {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	opacity: 1;
+	transition: all ease 0.2s;
 	h1 {
 		color: white;
+	}
+	&.ng-hide {
+		transition-delay: 0.4s;
+		opacity: 0;
 	}
 }
 
