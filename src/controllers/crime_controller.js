@@ -37,9 +37,8 @@ CrimeController.prototype.getCrime = function() {
 	this.search.type = this.searchType;
 	this.CrimeService.getCrime(this.search, function(err, res) {
 		if (err) {
-
+			console.log(err);
 		} else {
-			console.log(res);
 			that.search.crimes = res;
 			that.incidents = that.search;
 			that.createReport();
@@ -55,8 +54,13 @@ CrimeController.prototype.incidentReport = function(incident) {
 			that.incident = incident.incd;
 		}
 	});
-	// console.log(incident);
-	this.CrimeService.getOutcome(incident.incd.persistent_id);
+	this.CrimeService.getOutcome(incident.incd.persistent_id, function(err, res) {
+		if(err) {
+			console.log(err);
+		} else if(res) {
+			that.incident.outcomes = res;
+		}
+	});
 }
 
 CrimeController.prototype.createReport = function() {

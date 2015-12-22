@@ -8,6 +8,9 @@
 	<p>{{incident.street_name}}</p>
 	</section>
 	</div>
+	<div class="incident-outcome" ng-repeat="outcome in incident.outcomes">
+		<p><span>{{outcome.date}}</span> {{outcome.name}}</p>
+	</div>
 </div>
 
 

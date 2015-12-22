@@ -40,3 +40,17 @@
 		}
 	}
 }
+
+.incident-outcome {
+	padding: 10px 20px;
+	background: darken($white, 5%);
+	border-bottom: 1px solid darken($white, 10%);
+	p {	
+		color: $accent;
+		@include font-size(12px);
+		line-height: 20px;
+		span {
+			font-weight: bold;
+		}
+	}
+}

@@ -1,5 +1,6 @@
 var config = require('../endpoints/config.js');
 var Location = require('../models/location.js');
+var CrimeOutcome = require('../models/crime_outcome.js');
 
 function CrimeService($resource) {
 
@@ -82,19 +83,22 @@ function CrimeService($resource) {
 	  	crimeCall.get(onLoad, onError);
 	}
 
-	var getOutcome = function(id) {
+	var getOutcome = function(id, callback) {
 		var that = this;
 		if(!id) {
-			console.log('no id');
 			return;
 		}
 
 		var onLoad = function(res) {
-			console.log(res);
+			var outcomes = [];
+			for(var i = 0; i < res.outcomes.length; i++) {
+				outcomes.push(new CrimeOutcome(res.outcomes[i]));
+			}
+			return callback(undefined, outcomes);
 		}
 
 		var onError = function(err) {
-			console.log(err);
+			return callback(err);
 		}
 
 		var url = config.police.crime_outcome(id);
