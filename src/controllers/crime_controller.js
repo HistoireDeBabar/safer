@@ -53,8 +53,20 @@ CrimeController.prototype.getNeighbourhood = function() {
 		if(err) {
 			console.log(err);
 		} else if (res) {
-			that.incident.neighbourhood = res;
-			console.log(that.incident.neighbourhood);
+			that.police = res;
+			that.getForce();
+			// console.log(that.police);
+		}
+	});
+}
+
+CrimeController.prototype.getForce = function() {
+	var that = this;
+	this.CrimeService.getForce(this.police.force, function(err, res) {
+		if(err) {
+			console.log(err);
+		} else if(res) {
+			console.log(res);
 		}
 	});
 }

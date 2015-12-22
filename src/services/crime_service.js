@@ -126,6 +126,26 @@ function CrimeService($resource) {
 		neighbourhood.get(onLoad, onError);
 	}
 
+	var getForce = function(d, callback) {
+		var that = this;
+		if(!d) {
+			return;
+		}
+
+		var onLoad = function(res) {
+			console.log(res);
+		}
+
+		var onError = function(err) {
+			console.log(err);
+		}
+
+		var url = config.police.force(d);
+		var force = new $resource(url, undefined, {get: config.methods.get});
+		force.get(onLoad, onError);
+
+	}
+
 	var streetView = function(d, callback) {
 		var url = config.street.view(d);
 		callback(url);
@@ -139,7 +159,8 @@ function CrimeService($resource) {
 		streetView : streetView,
 		formatCrime : formatCrime,
 		getOutcome : getOutcome,
-		getNeighbourhood : getNeighbourhood
+		getNeighbourhood : getNeighbourhood,
+		getForce : getForce
 	};
 }
 

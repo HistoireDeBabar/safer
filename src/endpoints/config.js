@@ -42,6 +42,9 @@ var config = {
 		neighbourhood: function(d) {
 			return 'https://data.police.uk/api/locate-neighbourhood?q=' + d.lat + ',' + d.lng;
 		},
+		force: function(d) {
+			return 'https://data.police.uk/api/forces/' + d;
+		},
 		most_recent: 'https://data.police.uk/api/crime-last-updated',
 		availability: 'http://data.police.uk/api/crimes-street-dates'
 	}
