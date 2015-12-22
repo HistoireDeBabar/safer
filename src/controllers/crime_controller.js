@@ -16,6 +16,7 @@ CrimeController.prototype.getAddress = function() {
 		} else {
 			that.search = res;
 			that.getCrime();
+			that.getNeighbourhood();
 		}
 	});
 };
@@ -42,6 +43,18 @@ CrimeController.prototype.getCrime = function() {
 			that.search.crimes = res;
 			that.incidents = that.search;
 			that.createReport();
+		}
+	});
+}
+
+CrimeController.prototype.getNeighbourhood = function() {
+	var that = this;
+	this.CrimeService.getNeighbourhood(this.search, function(err, res) {
+		if(err) {
+			console.log(err);
+		} else if (res) {
+			that.incident.neighbourhood = res;
+			console.log(that.incident.neighbourhood);
 		}
 	});
 }

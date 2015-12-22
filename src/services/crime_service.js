@@ -1,6 +1,7 @@
 var config = require('../endpoints/config.js');
 var Location = require('../models/location.js');
 var CrimeOutcome = require('../models/crime_outcome.js');
+var Neighbourhood = require('../models/neighbourhood.js');
 
 function CrimeService($resource) {
 
@@ -106,6 +107,25 @@ function CrimeService($resource) {
 		outcome.get(onLoad, onError);
 	}
 
+	var getNeighbourhood = function(d, callback) {
+		var that = this;
+		if(!d) {
+			return;
+		}
+
+		var onLoad = function(res) {
+			callback(undefined, new Neighbourhood(res))
+		}
+
+		var onError = function(err) {
+			console.log(err);
+		}
+
+		var url = config.police.neighbourhood(d);
+		var neighbourhood = new $resource(url, undefined, {get: config.methods.get})
+		neighbourhood.get(onLoad, onError);
+	}
+
 	var streetView = function(d, callback) {
 		var url = config.street.view(d);
 		callback(url);
@@ -118,7 +138,8 @@ function CrimeService($resource) {
 		getCrime : getCrime,
 		streetView : streetView,
 		formatCrime : formatCrime,
-		getOutcome : getOutcome
+		getOutcome : getOutcome,
+		getNeighbourhood : getNeighbourhood
 	};
 }
 

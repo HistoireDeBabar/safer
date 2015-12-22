@@ -39,6 +39,9 @@ var config = {
 		crime_outcome: function(id) {
 			return 'https://data.police.uk/api/outcomes-for-crime/' + id;
 		},
+		neighbourhood: function(d) {
+			return 'https://data.police.uk/api/locate-neighbourhood?q=' + d.lat + ',' + d.lng;
+		},
 		most_recent: 'https://data.police.uk/api/crime-last-updated',
 		availability: 'http://data.police.uk/api/crimes-street-dates'
 	}
